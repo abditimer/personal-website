@@ -61,11 +61,10 @@
             font-size: 18px;
             color: var(--text-light);
             font-weight: 300;
-            margin: 8px 0 32px 0;
+            margin: 8px 0 0 0;
         }
         
         .theme-toggle {
-            background: none;
             border: 1px solid var(--border-color);
             color: var(--text-color);
             padding: 8px 12px;
@@ -73,18 +72,27 @@
             cursor: pointer;
             font-size: 14px;
             font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle.light {
+            background: #f3f4f6;
+        }
+        
+        .theme-toggle.dark {
+            background: #1f2937;
         }
         
         .theme-toggle:hover {
-            background: var(--border-color);
+            transform: scale(1.05);
         }
         
         .bio {
-            margin-bottom: 48px;
+            margin-bottom: 32px;
         }
         
         .bio p {
-            margin: 0 0 24px 0;
+            margin: 0 0 16px 0;
             font-size: 16px;
         }
         
@@ -111,11 +119,9 @@
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 400;
+            cursor: default;
         }
         
-        .item-title:hover {
-            color: var(--link-color);
-        }
         
         .item-meta {
             color: var(--text-light);
@@ -123,10 +129,27 @@
             margin-left: 8px;
         }
         
+        .item-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 4px;
+        }
+        
+        .item-link:hover {
+            color: var(--link-hover);
+        }
+        
+        .separator {
+            width: 100%;
+            height: 1px;
+            background: var(--border-color);
+            margin: 48px 0;
+        }
+        
         .contact {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 0;
+            padding-top: 0;
         }
         
         .contact a {
@@ -147,71 +170,81 @@
                 <h1>Abdi Timer</h1>
                 <p class="subtitle">Advisory Data Scientist at IBM</p>
             </div>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            <button class="theme-toggle light" onclick="toggleTheme()">🌙</button>
         </div>
 
         <div class="bio">
             <p>
-                Abdi Timer is an Advisory Data Scientist at IBM, where he leads the delivery of Generative AI solutions to customers across the UK and Ireland, managing C-level relationships and architectural decisions for enterprise AI implementations.
+                Abdi Timer is an Advisory Data Scientist at IBM, leading GenAI solution delivery across the UK and Ireland while managing C-level relationships and enterprise AI architecture.
             </p>
 
             <p>
-                Previously, Abdi worked as a Senior Data Scientist at Legal & General, where he developed machine learning models for competitor pricing deployed on Azure. He also served as a Senior Data Scientist at Capco, creating bespoke data models that reduced legacy solution deployment times from 12+ hours to under 1 minute per run.
+                Previously, he worked as a Machine Learning Engineer at Legal & General developing competitor pricing models, and as a Data Scientist at Capco optimizing data models that reduced deployment times from 12+ hours to under 1 minute.
             </p>
 
             <p>
-                Abdi is currently pursuing his PhD in AI at the University of Birmingham, and serves as Lead AI Instructor at BrainStation, where he advances AI education and helps organizations solve complex problems with cutting-edge solutions.
+                Abdi is pursuing his PhD in AI at the University of Birmingham and serves as Lead AI Instructor at BrainStation.
             </p>
         </div>
 
+        <div class="separator"></div>
+
         <div class="section">
-            <h2>Projects</h2>
+            <h2>Work</h2>
             <div class="section-content">
                 <div class="item">
-                    <a href="#" class="item-title">Enterprise GenAI Platform Deployment</a>
-                    <span class="item-meta">(IBM, 2024)</span>
+                    <span class="item-title">Population Data Model Optimization</span>
+                    <span class="item-meta">(Capco, 2021)</span>
                 </div>
                 <div class="item">
-                    <a href="#" class="item-title">Competitor Pricing ML Model</a>
-                    <span class="item-meta">(Legal & General, 2023)</span>
+                    <span class="item-title">Enterprise HR Chatbot</span> <a href="https://www.linkedin.com/feed/update/urn:li:activity:6474027172989267969/" class="item-link">[link]</a>
+                    <span class="item-meta">(Legal & General, 2020)</span>
                 </div>
                 <div class="item">
-                    <a href="#" class="item-title">Population Data Model Optimization</a>
-                    <span class="item-meta">(Capco, 2022)</span>
+                    <span class="item-title">Competitor Pricing ML Model</span>
+                    <span class="item-meta">(Legal & General, 2020)</span>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Teaching</h2>
+            <h2>Talks & Podcasts</h2>
             <div class="section-content">
                 <div class="item">
-                    <a href="#" class="item-title">Lead AI Instructor</a>
-                    <span class="item-meta">(BrainStation, 2023-Present)</span>
+                    <span class="item-title">AI for Everyone: From Mystery to Mastery</span> <a href="https://www.youtube.com/watch?v=o3I44lTzCH0&t=803s" class="item-link">[link]</a>
                 </div>
                 <div class="item">
-                    <a href="#" class="item-title">Generative AI Workshops</a>
-                    <span class="item-meta">(Various, 2024)</span>
+                    <span class="item-title">Headlining at Birmingham Tech Week</span> <a href="https://www.linkedin.com/posts/abditimer_birminghamtechweek-speaker-activity-7255127107280809985-NGuM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAzrO9YB5LTbK1g2ZDhKOCvwTRzEzjHU0yo" class="item-link">[link]</a>
+                </div>
+                <div class="item">
+                    <span class="item-title">Baseline podcast talking everything AI</span> <a href="https://www.youtube.com/watch?v=wxMfdX_SqFg&t=5s" class="item-link">[link]</a>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Research</h2>
+            <h2>Creatives</h2>
             <div class="section-content">
                 <div class="item">
-                    <a href="#" class="item-title">PhD in AI</a>
-                    <span class="item-meta">(University of Birmingham, In Progress)</span>
+                    <span class="item-title">TikToks</span> <a href="https://www.tiktok.com/@abditimer" class="item-link">[link]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Blogs</h2>
+            <div class="section-content">
+                <div class="item">
+                    <span class="item-title">📝 My Substack</span> <a href="https://abditimer.substack.com/" class="item-link">[link]</a>
                 </div>
                 <div class="item">
-                    <a href="#" class="item-title">AI Safety and Enterprise Deployment</a>
-                    <span class="item-meta">(Research Focus)</span>
+                    <span class="item-title">💼 LinkedIn Newsletter</span> <a href="https://www.linkedin.com/newsletters/abdi-s-ai-summary-newsletter-7321204038367158277/" class="item-link">[link]</a>
                 </div>
             </div>
         </div>
 
         <div class="contact">
-            <a href="mailto:timer.jobs@gmail.com">Email</a>
+            <span style="color: var(--text-color); margin-right: 16px;">timer.research (at) gmail (dot) com</span>
             <a href="https://github.com/abditimer">GitHub</a>
             <a href="https://linkedin.com/in/abditimer">LinkedIn</a>
         </div>
@@ -225,10 +258,12 @@
             if (html.getAttribute('data-theme') === 'dark') {
                 html.removeAttribute('data-theme');
                 button.textContent = '🌙';
+                button.className = 'theme-toggle light';
                 localStorage.setItem('theme', 'light');
             } else {
                 html.setAttribute('data-theme', 'dark');
                 button.textContent = '☀️';
+                button.className = 'theme-toggle dark';
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -241,6 +276,9 @@
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 button.textContent = '☀️';
+                button.className = 'theme-toggle dark';
+            } else {
+                button.className = 'theme-toggle light';
             }
         });
     </script>
