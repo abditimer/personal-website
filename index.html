@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdi Timer</title>
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #374151;
+            --text-light: #6B7280;
+            --text-dark: #111827;
+            --link-color: #2563EB;
+            --link-hover: #1D4ED8;
+            --border-color: #e5e7eb;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #0f0f0f;
+            --text-color: #d1d5db;
+            --text-light: #9ca3af;
+            --text-dark: #f9fafb;
+            --link-color: #60a5fa;
+            --link-hover: #93c5fd;
+            --border-color: #374151;
+        }
+        
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #374151;
-            background: white;
+            color: var(--text-color);
+            background: var(--bg-color);
             margin: 0;
-            padding: 80px 24px;
+            padding: 40px 24px;
         }
         
         .container {
@@ -19,108 +43,206 @@
             margin: 0 auto;
         }
         
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 48px;
+        }
+        
         h1 {
             font-size: 36px;
             font-weight: 300;
-            color: #111827;
-            margin: 0 0 16px 0;
-        }
-        
-        .subtitle {
-            font-size: 20px;
-            color: #6B7280;
-            font-weight: 300;
-            margin: 0 0 64px 0;
-        }
-        
-        p {
-            margin: 0 0 48px 0;
-        }
-        
-        h2 {
-            font-size: 20px;
-            font-weight: 300;
-            color: #111827;
-            margin: 64px 0 24px 0;
-        }
-        
-        .project {
-            margin-bottom: 24px;
-        }
-        
-        .project h3 {
-            font-weight: 500;
-            color: #111827;
-            margin: 0 0 4px 0;
-        }
-        
-        .project p {
-            color: #6B7280;
+            color: var(--text-dark);
             margin: 0;
         }
         
-        a {
-            color: #2563EB;
-            text-decoration: none;
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            font-weight: 300;
+            margin: 8px 0 32px 0;
         }
         
-        a:hover {
-            color: #1D4ED8;
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--border-color);
+        }
+        
+        .bio {
+            margin-bottom: 48px;
+        }
+        
+        .bio p {
+            margin: 0 0 24px 0;
+            font-size: 16px;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+        }
+        
+        .section h2 {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin: 0 0 16px 0;
+        }
+        
+        .section-content {
+            margin-left: 0;
+        }
+        
+        .item {
+            margin-bottom: 12px;
+        }
+        
+        .item-title {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+        }
+        
+        .item-title:hover {
+            color: var(--link-color);
+        }
+        
+        .item-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        
+        .contact {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .contact a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-right: 16px;
+        }
+        
+        .contact a:hover {
+            color: var(--link-hover);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Abdi Timer</h1>
-            <p class="subtitle">Advisory Data Scientist · AI PhD Researcher · Lead AI Instructor</p>
-        </header>
-
-        <main>
-            <p>
-                I'm an Advisory Data Scientist at IBM with close to 10 years of experience in AI. 
-                I spearhead the delivery of Generative AI solutions to customers across UK and Ireland, 
-                managing C-level relationships and leading architectural decisions for enterprise AI implementations.
-            </p>
-
-            <p>
-                As a public speaker, researcher, and Lead AI Instructor at BrainStation, I'm passionate about 
-                advancing AI education and helping organizations solve complex problems with cutting-edge AI solutions. 
-                Currently pursuing my PhD in AI at the University of Birmingham while delivering IBM's GenAI platform to clients.
-            </p>
-
-            <p>
-                My expertise spans machine learning engineering, data science, and enterprise AI deployment across 
-                diverse industries including financial services and insurance. I specialize in building safe, 
-                client-ready AI prototypes and leading teams through complex AI transformations.
-            </p>
-
-            <h2>Selected Work</h2>
-            
-            <div class="project">
-                <h3>Enterprise GenAI Platform Deployment</h3>
-                <p>Leading IBM's GenAI platform delivery to UK and Ireland clients, managing C-level relationships and architectural decisions for enterprise AI implementations</p>
+        <div class="header">
+            <div>
+                <h1>Abdi Timer</h1>
+                <p class="subtitle">Advisory Data Scientist at IBM</p>
             </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
 
-            <div class="project">
-                <h3>Competitor Pricing ML Model</h3>
-                <p>Developed machine learning model for Legal & General deployed on Azure, resulting in 3 new innovative pricing strategies with significantly enhanced data utilization</p>
-            </div>
-
-            <div class="project">
-                <h3>Population Data Model Optimization</h3>
-                <p>Created bespoke data model at Capco that reduced legacy solution deployment time from 12+ hours to under 1 minute per run</p>
-            </div>
+        <div class="bio">
+            <p>
+                Abdi Timer is an Advisory Data Scientist at IBM, where he leads the delivery of Generative AI solutions to customers across the UK and Ireland, managing C-level relationships and architectural decisions for enterprise AI implementations.
+            </p>
 
             <p>
-                You can reach me at 
-                <a href="mailto:timer.jobs@gmail.com">timer.jobs@gmail.com</a>
-                or find me on 
-                <a href="https://github.com/abditimer">GitHub</a>
-                and 
-                <a href="https://linkedin.com/in/abditimer">LinkedIn</a>.
+                Previously, Abdi worked as a Senior Data Scientist at Legal & General, where he developed machine learning models for competitor pricing deployed on Azure. He also served as a Senior Data Scientist at Capco, creating bespoke data models that reduced legacy solution deployment times from 12+ hours to under 1 minute per run.
             </p>
-        </main>
+
+            <p>
+                Abdi is currently pursuing his PhD in AI at the University of Birmingham, and serves as Lead AI Instructor at BrainStation, where he advances AI education and helps organizations solve complex problems with cutting-edge solutions.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="section-content">
+                <div class="item">
+                    <a href="#" class="item-title">Enterprise GenAI Platform Deployment</a>
+                    <span class="item-meta">(IBM, 2024)</span>
+                </div>
+                <div class="item">
+                    <a href="#" class="item-title">Competitor Pricing ML Model</a>
+                    <span class="item-meta">(Legal & General, 2023)</span>
+                </div>
+                <div class="item">
+                    <a href="#" class="item-title">Population Data Model Optimization</a>
+                    <span class="item-meta">(Capco, 2022)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Teaching</h2>
+            <div class="section-content">
+                <div class="item">
+                    <a href="#" class="item-title">Lead AI Instructor</a>
+                    <span class="item-meta">(BrainStation, 2023-Present)</span>
+                </div>
+                <div class="item">
+                    <a href="#" class="item-title">Generative AI Workshops</a>
+                    <span class="item-meta">(Various, 2024)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Research</h2>
+            <div class="section-content">
+                <div class="item">
+                    <a href="#" class="item-title">PhD in AI</a>
+                    <span class="item-meta">(University of Birmingham, In Progress)</span>
+                </div>
+                <div class="item">
+                    <a href="#" class="item-title">AI Safety and Enterprise Deployment</a>
+                    <span class="item-meta">(Research Focus)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <a href="mailto:timer.jobs@gmail.com">Email</a>
+            <a href="https://github.com/abditimer">GitHub</a>
+            <a href="https://linkedin.com/in/abditimer">LinkedIn</a>
+        </div>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                button.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                button.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const button = document.querySelector('.theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                button.textContent = '☀️';
+            }
+        });
+    </script>
 </body>
 </html>

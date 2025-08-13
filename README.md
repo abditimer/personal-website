@@ -2,6 +2,8 @@
 
 A clean, minimalist personal website showcasing professional experience and expertise in AI and data science.
 
+Built with cursor.
+
 ## Overview
 
 This is a single-page personal website for Abdi Timer, featuring:
@@ -36,30 +38,3 @@ personal_website/
 1. Clone this repository
 2. Open `index.html` in your web browser
 3. The website is ready to view locally
-
-## Deployment
-
-This static website can be deployed to any web hosting service:
-- GitHub Pages
-- Netlify
-- Vercel
-- Traditional web hosting
-
-Simply upload the HTML file to your hosting provider.
-
-## Contact
-
-- **Email**: timer.jobs@gmail.com
-- **GitHub**: [abditimer](https://github.com/abditimer)
-- **LinkedIn**: [abditimer](https://linkedin.com/in/abditimer)
-
-## Professional Background
-
-**Advisory Data Scientist at IBM** with nearly 10 years of AI experience, specializing in:
-- Generative AI solutions delivery
-- Enterprise AI implementations
-- Machine learning engineering
-- Data science and analytics
-- AI education and instruction
-
-Currently pursuing PhD in AI at the University of Birmingham.
