@@ -28,13 +28,13 @@ This is a single-page personal website for Abdi Timer, featuring:
 ```
 personal_website/
 ├── README.md
-└── simple-html-page.html    # Main website file
+└── index.html    # Main website file
 ```
 
 ## Getting Started
 
 1. Clone this repository
-2. Open `simple-html-page.html` in your web browser
+2. Open `index.html` in your web browser
 3. The website is ready to view locally
 
 ## Deployment
